@@ -13,11 +13,6 @@ public class ItemController {
 	@Autowired
 	private ItemBusinessService businessService;
 	
-	@GetMapping("/dummy-item")
-	public Item dummyItem() {
-		return new Item(1, "ball", 10, 100);
-	}
-	
 	@GetMapping("/item-from-service")
 	public Item itemFromBusinessService() {
 
