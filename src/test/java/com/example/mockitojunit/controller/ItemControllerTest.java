@@ -31,21 +31,6 @@ public class ItemControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
 
-	@Test
-	public void dummyItem_basic() throws Exception {
-		
-		when(businessService.getHardcodedItem()).thenReturn(new Item(1,"ball", 10,10));
-		
-		RequestBuilder request = MockMvcRequestBuilders
-				.get("/item-from-service")
-				.accept(MediaType.APPLICATION_JSON);
-		
-		MvcResult result = mockMvc.perform(request)
-				.andExpect(status().isOk())
-				.andExpect(content().json("{\"id\":1,\"name\":\"ball\",\"price\":10,\"quantity\":10}"))
-				.andReturn();
-				
-	}
 
 	@Test
 	public void itemFromBusinessService_basic() throws Exception {
